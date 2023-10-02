@@ -198,8 +198,8 @@ public class RubberArray_my {
 
     int summValue() {
         int summ = 0;
-        for (int value : array) {
-            summ += value;
+        for (int i = 0; i < cursor ; i++) {
+            summ += array[i];
         }
         return summ;
     }

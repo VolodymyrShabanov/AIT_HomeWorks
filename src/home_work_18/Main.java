@@ -20,7 +20,7 @@ public class Main {
 //        System.out.println("rubArr.numberOf: " + rubArr.numberOf(3));
 //
 //
-        int[] array = {13, 22, 84, 99};
+        int[] array = {1, 1, 1, 1};
         RubberArray_my rubArr1 = new RubberArray_my(array);
 //        System.out.println(("длина массива rubArr1: " + rubArr1.length()));
 //        System.out.println("rubAr1.toString(): " + rubArr1.toString());
