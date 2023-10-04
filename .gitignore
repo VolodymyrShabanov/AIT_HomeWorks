@@ -2,8 +2,12 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
+
 .idea/
 AIT_HomeWorks.iml
+src/draft/
+
 
 ### Eclipse ###
 .apt_generated
