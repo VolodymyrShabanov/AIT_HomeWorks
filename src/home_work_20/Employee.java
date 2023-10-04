@@ -12,7 +12,7 @@ public class Employee {
     }
 
     public void info() {
-        System.out.printf("My name is %s. I am %d years old. I have a salary of %s euros.", name, age, salary);
+        System.out.printf("My name is %s. I am %d years old. I have a salary of %s euros.\n", name, age, salary);
 
     }
 
