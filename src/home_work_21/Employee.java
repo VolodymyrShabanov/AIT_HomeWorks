@@ -1,6 +1,8 @@
-package home_work_20;
+package home_work_21;
 
 public class Employee {
+    private final int id;
+    private static int counter;
     private String name;
     private int age;
     private int salary;
@@ -9,11 +11,15 @@ public class Employee {
         this.name = name;
         this.age = age;
         this.salary = salary;
+        this.id = counter++;
     }
 
     public void info() {
         System.out.printf("My name is %s. I am %d years old. I have a salary of %d euros.\n", name, age, salary);
+    }
 
+    public int getId() {
+        return id;
     }
 
     public String getName() {
