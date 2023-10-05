@@ -2,7 +2,7 @@ package home_work_21;
 
 public class Doggy {
 
-    static final boolean TRAININGABILITY = true;
+    static final int  JUMP_HEIGHT_COEFFICIENT = 2;
     private static int counterJump;
     private String name;
     private int jumpHeight;
@@ -12,9 +12,10 @@ public class Doggy {
 
     public Doggy(String name, int jumpHeight) {
         this.name = name;
-        this.jumpHeight = jumpHeight;
         this.increasePerOneTraining = 10;
-        this.maxJumpHeight = jumpHeight * 2;
+
+        this.jumpHeight = jumpHeight;
+        this.maxJumpHeight = jumpHeight * JUMP_HEIGHT_COEFFICIENT;
 
     }
 
@@ -65,7 +66,7 @@ public class Doggy {
 
     public void train() {
 
-        if (jumpHeight < maxJumpHeight || TRAININGABILITY) {
+        if (jumpHeight < maxJumpHeight) {
             jumpHeight += increasePerOneTraining;
             System.out.println("Собака " + name + " потренировалась и теперь может прыгнуть на: " + jumpHeight + " (см).");
         }
