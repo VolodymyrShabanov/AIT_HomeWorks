@@ -133,7 +133,7 @@ public class HomeWork_13 {
             }
         }
         printArray(concatenatedArray);
-        System.out.println("не 7-й позиции находится: " + concatenatedArray[position]);
+        System.out.println("на 7-й позиции находится: " + concatenatedArray[position]);
     }
 
 }

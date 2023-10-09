@@ -14,7 +14,8 @@ public class MainDog {
         dog1.barrierCounterPassed(barriers);
 
 
-        System.out.println("\nВсе собаки прыгнули: " + Doggy.getCounterJump() + " раз!");
+        System.out.println("\nВсе собаки прыгнули: " + Doggy.totalJumpCounter() + " раз!");
+
 
     }
 

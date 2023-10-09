@@ -2,20 +2,20 @@ package home_work_21;
 
 public class Doggy {
 
-    static final int  JUMP_HEIGHT_COEFFICIENT = 2;
-    private static int counterJump;
+    static final int MAX_JUMP_MULTIPLIER = 2;
+    static final int INCREASE_BY_TRAIN = 10;
+    private static int totalJumpCounter;
+
+
     private String name;
     private int jumpHeight;
-    private int maxJumpHeight;
-    private int increasePerOneTraining;
+    private final int maxJumpHeight;
 
 
     public Doggy(String name, int jumpHeight) {
         this.name = name;
-        this.increasePerOneTraining = 10;
-
         this.jumpHeight = jumpHeight;
-        this.maxJumpHeight = jumpHeight * JUMP_HEIGHT_COEFFICIENT;
+        this.maxJumpHeight = jumpHeight * MAX_JUMP_MULTIPLIER;
 
     }
 
@@ -39,35 +39,24 @@ public class Doggy {
         return maxJumpHeight;
     }
 
-    public void setMaxJumpHeight(int maxJumpHeight) {
-        this.maxJumpHeight = maxJumpHeight;
-    }
-
-    public int getIncreasePerOneTraining() {
-        return increasePerOneTraining;
-    }
-
-    public void setIncreasePerOneTraining(int increasePerOneTraining) {
-        this.increasePerOneTraining = increasePerOneTraining;
-    }
 
     public String whoAmI() {
         return "I am doggy: " + name + ", I'am jumping to heights: " + jumpHeight + " (sm).";
     }
 
-    public void jumping() {
+    private void jumping() {
         System.out.println("Собака " + name + " прыгнула!");
-        counterJump++;
+        totalJumpCounter++;
     }
 
-    public static int getCounterJump() {
-        return counterJump;
+    public static int totalJumpCounter() {
+        return totalJumpCounter;
     }
 
     public void train() {
 
         if (jumpHeight < maxJumpHeight) {
-            jumpHeight += increasePerOneTraining;
+            jumpHeight += INCREASE_BY_TRAIN;
             System.out.println("Собака " + name + " потренировалась и теперь может прыгнуть на: " + jumpHeight + " (см).");
         }
 
