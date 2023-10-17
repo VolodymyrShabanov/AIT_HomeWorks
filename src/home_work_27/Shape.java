@@ -7,12 +7,11 @@ abstract class Shape {
     public Shape() {
         this.id = counter++;
     }
-    @Override
-    public String toString() {
-        return "{Shape: Sh-" + String.format("%02d", id) + "}";
-    }
-
     abstract double calcArea();
     abstract double calcPerimeter();
 
+    public int getId() {
+
+        return id;
+    }
 }

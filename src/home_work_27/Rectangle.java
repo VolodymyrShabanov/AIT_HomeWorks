@@ -1,13 +1,13 @@
 package home_work_27;
 
 public class Rectangle extends Shape {
-    private final int id;
+    private final String id;
     private static int counter;
     private int sideA;
     private int sideB;
 
     public Rectangle(int sideA, int sideB) {
-        this.id = counter++;
+        this.id = String.format("%02d", counter++) + "/" + String.format("%02d", super.getId());
         if (sideA > 0 && sideB > 0) {
             this.sideA = sideA;
             this.sideB = sideB;
@@ -16,7 +16,8 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "{Rectangle: Re-" + String.format("%02d", id) + "}";
+        return "{Rectangle: Re-" + id + "}";
+//        return "{Shape: Sh-" + String.format("%02d", super.getId()) + "}" + "{Rectangle: Re-" + String.format("%02d", id) + "}";
     }
 
     @Override

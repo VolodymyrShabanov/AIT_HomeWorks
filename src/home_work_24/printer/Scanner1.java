@@ -1,15 +1,15 @@
 package home_work_24.printer;
 
-public class Scanner extends ComputerPeripheral{
+public class Scanner1 extends ComputerPeripheral{
     private final int id;
     private static int counter;
     private String model;
     private boolean colorScanner;
 
-    public Scanner(String manufacturer,
-                   int yearOfManufacture,
-                   String model,
-                   boolean colorScanner) {
+    private Scanner1(String manufacturer,
+                     int yearOfManufacture,
+                     String model,
+                     boolean colorScanner) {
         super(manufacturer, yearOfManufacture);
         this.id = counter;
         this.model = model;

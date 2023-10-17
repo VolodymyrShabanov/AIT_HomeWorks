@@ -1,14 +1,14 @@
 package home_work_27;
 
-public class Circle extends Shape{
-    private final int id;
+public class Circle extends Shape {
+    private final String id;
     private static int counter;
     static final double PI = 3.1415926535;
     private int radius;
 
 
     public Circle(int radius) {
-        this.id = counter++;
+        this.id = String.format("%02d", counter++) + "/" + String.format("%02d", super.getId());
         if (radius > 0) {
             this.radius = radius;
         }
@@ -16,7 +16,8 @@ public class Circle extends Shape{
 
     @Override
     public String toString() {
-        return super.toString() + "{Circle: Ci-" + String.format("%02d", id) + "}";
+        return "{Circle: Ci-" + id + "}";
+//        return "{Shape: Sh-" + String.format("%02d", super.getId()) + "}" + "{Circle: Ci-" + String.format("%05d", id) + "}";
     }
 
     @Override

@@ -1,16 +1,16 @@
 package home_work_27;
 
 public class Triangle extends Shape {
-    private final int id;
+    private final String id;
     private static int counter;
     private int sideA;
     private int sideB;
     private int sideC;
 
     public Triangle(int sideA, int sideB, int sideC) {
-        this.id = counter++;
+        this.id = String.format("%02d", counter++) + "/" + String.format("%02d", super.getId());
         if (sideA > 0 && sideB > 0 && sideC > 0) {
-            if ((sideA + sideB) > sideC && (sideB + sideC) > sideA && (sideA + sideC)> sideB) {
+            if (isValidSides(sideA, sideB, sideC)) {
                 this.sideA = sideA;
                 this.sideB = sideB;
                 this.sideC = sideC;
@@ -18,9 +18,15 @@ public class Triangle extends Shape {
         }
     }
 
+    public boolean isValidSides(double sideA, double sideB, double sideC) {
+        return (sideA + sideB) > sideC && (sideB + sideC) > sideA && (sideA + sideC) > sideB;
+
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "{Triangle: Tr-" + String.format("%02d", id) + "}";
+        return "{Triangle: Tr-" + id + "}";
+//        return "{Shape: Sh-" + String.format("%02d", super.getId()) + "}" + "{Triangle: Tr-" + String.format("%02d", id) + "}";
     }
 
     @Override
