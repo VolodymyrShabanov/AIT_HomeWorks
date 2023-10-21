@@ -5,16 +5,20 @@ import java.util.Arrays;
 public class MainDictionatry {
     public static void main(String[] args) {
         Dictionary dictionary = new Dictionary();
+        System.out.println(dictionary);
         dictionary.put("Hello", "Привет");
         dictionary.put("Bye", "Пока");
-        System.out.println(dictionary.getCounter());
-        //System.out.println(dictionary.get("Hello"));
-
+        dictionary.put("Java", "Java");
+        System.out.println("Печатаем словарь: " + dictionary);
+        System.out.println("Количество строек: " + dictionary.getCounter());
+        System.out.println("Перевод слова: " + dictionary.get("Hello"));
         String[] words = {"Hello", "Bye", "Java"};
 
         Dictionary.Translator translator = dictionary.new Translator();
 
-        System.out.println(Arrays.toString(translator.translate(words)));
+        translator.translate(words);
+        System.out.println(translator);
+
 
     }
 }

@@ -2,7 +2,55 @@ package home_work_28;
 
 public class Dictionary {
 
-    // ==========================================================
+    // ==Outer (Внешний класс)========================================================
+    private DictionaryPair[] row;
+    private int counter;
+
+    public Dictionary() {
+        this.row = new DictionaryPair[10];
+    }
+
+    public void put(String key, String value) {
+        for (int i = 0; i < counter; i++) {
+            if (row[i].key.equals(key)) {
+                row[i].value = value;
+                return;
+            }
+        }
+        row[counter++] = new DictionaryPair(key, value);
+    }
+
+    public String get(String key) {
+        for (int i = 0; i < counter; i++) {
+            if (row[i].key.equals(key)) {
+                return row[i].value;
+            }
+        }
+        return "translation not found";
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{");
+        if (counter != 0) {
+            sb.append(row[0]);
+            for (int i = 1; i < counter; i++) {
+                sb.append(", ").append(row[i]);
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    public DictionaryPair[] getRow() {
+        return row;
+    }
+
+    public int getCounter() {
+        return counter;
+    }
+
+    // ==Nested (Вложенный класс)========================================================
     private static class DictionaryPair {
         private String key;
         private String value;
@@ -12,60 +60,37 @@ public class Dictionary {
             this.value = value;
         }
 
-    }
-
-    // ==========================================================
-    private DictionaryPair[] table;
-    private int counter;
-
-    public Dictionary() {
-        this.table = new DictionaryPair[10];
-    }
-
-    public void put(String key, String value) {
-        for (int i = 0; i < counter; i++) {
-            DictionaryPair current = table[i];
-            if (current.key.equals(key)) {
-                current.value = value;
-                return;
-            }
-
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("[").append(key).append(", ").append(value).append("]");
+            return sb.toString();
         }
-
-        DictionaryPair newPair = new DictionaryPair(key, value);
-        table[counter] = newPair;
-        counter++;
     }
 
-    public String get(String key) {
-        for (int i = 0; i < counter; i++) {
-            DictionaryPair current = table[i];
-            if (current.key.equals(key)) {
-                return current.value;
-            }
-        }
-        return null;
-    }
-
-    public DictionaryPair[] getTable() {
-        return table;
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-
-    // ==========================================================
+    // ==Inner (Внутренний класс)========================================================
     public class Translator {
-        private String[] translate;
+        private String [] result;
+
         public String[] translate(String[] words) {
-            String[] translate = new String[words.length];
+            this.result = new String[words.length];
             for (int i = 0; i < words.length; i++) {
-                translate [i] = get(words[i]);
+                result[i] = get(words[i]);
             }
-            return translate = translate;
+            return result;
         }
 
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder("{");
+            if (result.length != 0) {
+                sb.append(result[0]);
+                for (int i = 1; i < result.length; i++) {
+                    sb.append(", ").append(result[i]);
+                }
+            }
+            sb.append("}");
+            return sb.toString();
+        }
     }
 }
