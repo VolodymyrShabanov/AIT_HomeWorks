@@ -61,12 +61,16 @@ public class MyLinkedList<T> {
     }
 
     public int lastIndexOf(T value) {
+//        if (this.first == null) {
+//            return -1;
+//        }
+
         Node<T> tempIndex = this.last;
         for (int i = this.size - 1; i >= 0; i--) {
             if (tempIndex.value.equals(value)) {
                 return i;
             }
-            tempIndex = tempIndex.next;
+            tempIndex = tempIndex.previous;
         }
         return -1;
     }
@@ -100,16 +104,29 @@ public class MyLinkedList<T> {
         return tempValue.value;
     }
 
+    @Override
     public String toString() {
         if (isEmpty()) return "[]";
-        Node<T> tempPint = first;
+        Node<T> tempPrint = first;
         // почему-то не получилось через StringBuilder
         System.out.print("[");
         for (int i = 0; i < this.size; i++) {
-            System.out.print(tempPint.value + ((i < this.size - 1) ? "; " : "]\n"));
-            tempPint = tempPint.next;  // интуитивно понимаю что здесь происходит, но не до конца
+            System.out.print(tempPrint.value + ((i < this.size - 1) ? "; " : "]\n"));
+            tempPrint = tempPrint.next;  // интуитивно понимаю что здесь происходит, но не до конца
         }
-        return null;
+        return "[]";
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public Node<T> getFirst() {
+        return first;
+    }
+
+    public Node<T> getLast() {
+        return last;
     }
 
     private static class Node<T> {
