@@ -1,4 +1,4 @@
-package home_work_33.my_array_list;
+package home_work_34.my_array_list;
 /*
 @date 18.10.2023 - (last version HW 30) - lesson 31 !!!
 @author Sergey Bugaienko

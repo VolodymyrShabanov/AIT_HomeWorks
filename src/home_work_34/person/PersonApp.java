@@ -1,4 +1,4 @@
-package home_work_33.person;
+package home_work_34.person;
 
 // Created by Volodymyr Sh on 23.10.2023
 // project name: AIT_Lessons

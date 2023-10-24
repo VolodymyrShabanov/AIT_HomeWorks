@@ -1,4 +1,4 @@
-package home_work_33.my_array_list;
+package home_work_34.my_array_list;
 
 // Created by Volodymyr Sh on 24.10.2023
 // project name: AIT_HomeWorks
