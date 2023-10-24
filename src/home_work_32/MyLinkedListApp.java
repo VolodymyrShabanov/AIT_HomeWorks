@@ -46,11 +46,14 @@ public class MyLinkedListApp {
         str.addAll("l2");
         str.addAll("o");
         str.addAll("!");
+        System.out.println("T get(int index); " + str.get(0));
         System.out.println(str.size());
         System.out.println(str.toString());
-        System.out.println(str.remove(3));
-
+        System.out.println(str.remove(1));
+        System.out.println(str.remove("d"));
         System.out.println(str.toString());
+        System.out.println(str.get(2));
+
 //        System.out.println(str.indexOf(new String("!")));
 //        System.out.println(str.lastIndexOf(new String("!")));
 //        System.out.println(str.contains("H"));

@@ -118,13 +118,14 @@ public class MyLinkedList<T> implements MyList<T>, Queue<T> {
 
     @Override
     public boolean contains(T value) {
-        return indexOf(value) >= 0;
+        return indexOf(value) != -1;
     }
 
-    /*TODO - вопрос по приведению типов.
+    /* - вопрос по приведению типов.
     В main при записи String [] strNew = str.toArray();
     возникает ошибка - ClassCastException.
      */
+
     @Override
     public T[] toArray() {
 
@@ -139,10 +140,30 @@ public class MyLinkedList<T> implements MyList<T>, Queue<T> {
         return result;
     }
 
-    // todo - реализовать
+    @Override
     public boolean remove(T value) {
-        return false;
+        return remove(indexOf(value)) != null;
+
     }
+
+    // Teacher
+    private void removeNode(Node<T> node) {
+        if (node == first) {
+            remove();
+            return;
+        }
+
+        if (node == last) {
+            removeLast();
+            return;
+        }
+
+        node.previous.next = node.next;
+        node.next.previous = node.previous;
+        size--;
+
+    }
+
 
     @Override
     public T remove(int index) {
@@ -150,31 +171,23 @@ public class MyLinkedList<T> implements MyList<T>, Queue<T> {
             return null;
         }
 
+        Node<T> cursor = searchNodeByIndex(index);
+
         // возможно ли переопределять методы из разных interface?
-        if (index == 0) {
+        if (cursor == first) {
             removeFirst();
+            return cursor.value;
         }
 
-        if (index == size - 1) {
+        if (cursor == last) {
             removeLast();
+            return cursor.value;
         }
 
-        Node<T> cursor = first;
+        cursor.previous.next = cursor.next;
+        cursor.next.previous = cursor.previous;
+        size--;
 
-        if (size >= 3) {
-            while (index != 0) {
-                index--;
-                cursor = cursor.next;
-            }
-            cursor.previous.next = cursor.next;
-            cursor.next.previous = cursor.previous;
-
-//            Node<T> tempPrev = cursor.previous;
-//            Node<T> tempNext = cursor.next;
-//            tempPrev.next = cursor.next;
-//            tempNext.previous = cursor.previous;
-
-        }
         return cursor.value;
     }
 
@@ -189,14 +202,18 @@ public class MyLinkedList<T> implements MyList<T>, Queue<T> {
         if (index < 0 || index > size - 1) {
             return null;
         }
+
+        return searchNodeByIndex(index).value;
+    }
+
+    private Node<T> searchNodeByIndex (int index) {
         Node<T> cursor = first;
         while (index != 0) {
             index--;
             cursor = cursor.next;
         }
-        return cursor.value;
+        return cursor;
     }
-
 
     // ============================= interface Queue ===============================
 

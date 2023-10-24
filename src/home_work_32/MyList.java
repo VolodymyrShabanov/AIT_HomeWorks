@@ -18,17 +18,17 @@ public interface MyList<T> {
     // содержит ли список хотя бы один элемент со значением value
     boolean contains(T value);      // Done
 
-    T[] toArray();
+    T[] toArray();                  // Done
 
     // удаление по значению, первое вхождение
-    boolean remove(T value);
+    boolean remove(T value);         // Done
 
-    T remove(int index);
+    T remove(int index);             // Done
 
     // Отвечает на вопрос, является ли коллекция пустой.
-    boolean isEmpty();                  // Done
+    boolean isEmpty();               // Done
 
-    T get(int index);                   // Done
+    T get(int index);                // Done
 
 
 
