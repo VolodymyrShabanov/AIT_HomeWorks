@@ -23,12 +23,12 @@ public class Person {
     }
 
     public void setEmail(String email) {
-        if (isEmeilValid(email)) {
+        if (isEmailValid(email)) {
             this.email = email;
         }
     }
 
-    private boolean isEmeilValid(String email) {
+    private boolean isEmailValid(String email) {
 
         int indexAt = email.indexOf('@');
         if (indexAt == -1 || indexAt != email.lastIndexOf('@')) return false;
@@ -40,10 +40,10 @@ public class Person {
         for (int i = 0; i < email.length(); i++) {
             char c = email.charAt(i);
             if (!(Character.isAlphabetic(c) || Character.isDigit(c)
-                                            || c == '.'
-                                            || c == '_'
-                                            || c == '-'
-                                            || c == '@')) {
+                    || c == '.'
+                    || c == '_'
+                    || c == '-'
+                    || c == '@')) {
                 return false;
             }
         }
@@ -55,7 +55,43 @@ public class Person {
     }
 
     public void setPassword(String password) {
+        if (isPasswordValid(password)) {
+            this.password = password;
+        }
+    }
 
-        this.password = password;
+    private boolean isPasswordValid(String password) {
+        //        длина >= 8
+        if (password.length() < 8) return false;
+
+//        мин 1 цифра
+        boolean isDigit = false;
+//        мин 1 маленькая буква
+        boolean isLowerCase = false;
+//        мин 1 большая буква
+        boolean isUpperCase = false;
+//        мин 1 спец.символ ("!%$@&")
+        boolean isSpecialSymbol = false;
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if ((Character.isDigit(c))) {
+                isDigit = true;
+            }
+            if ((Character.isLowerCase(c))) {
+                isLowerCase = true;
+            }
+            if ((Character.isUpperCase(c))) {
+                isUpperCase = true;
+            }
+            if (c == '!' || c == '%' || c == '$' || c == '@' || c == '&') {
+                isSpecialSymbol = true;
+            }
+        }
+
+        if (!(isDigit && isLowerCase && isUpperCase && isSpecialSymbol)) {
+            return false;
+        }
+
+        return true;
     }
 }
