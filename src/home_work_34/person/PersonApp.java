@@ -31,6 +31,11 @@ public class PersonApp {
         System.out.println("current pass: " + person.getPassword());
 
 
+//        String pek = "АSFk";
+//        for (int i = 0; i < pek.length(); i++) {
+//            char c = pek.charAt(i);
+//            if (c > 'A' && c < 'Z') System.out.println(c);
+//        }
 
     }
 }

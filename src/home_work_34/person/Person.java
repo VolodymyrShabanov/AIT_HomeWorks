@@ -39,7 +39,7 @@ public class Person {
 
         for (int i = 0; i < email.length(); i++) {
             char c = email.charAt(i);
-            if (!(Character.isAlphabetic(c) || Character.isDigit(c)
+            if (!(isAlphabeticLatin(c) || Character.isDigit(c)
                     || c == '.'
                     || c == '_'
                     || c == '-'
@@ -48,6 +48,10 @@ public class Person {
             }
         }
         return true;
+    }
+    // добавил проверку на латиницу
+    private boolean isAlphabeticLatin(char c){
+        return (c > 'A' && c < 'Z' || c > 'a' && c < 'z');
     }
 
     public String getPassword() {
@@ -59,6 +63,7 @@ public class Person {
             this.password = password;
         }
     }
+
 
     private boolean isPasswordValid(String password) {
         //        длина >= 8
