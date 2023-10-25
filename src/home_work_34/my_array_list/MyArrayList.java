@@ -17,6 +17,7 @@ public class MyArrayList<T> implements MyList<T>, Iterable<T> {
     public MyArrayList() {
         array = (T[]) new Object[10];
     }
+
     public MyArrayList(int sizeDefault) {
         array = (T[]) new Object[sizeDefault];
     }
@@ -31,14 +32,18 @@ public class MyArrayList<T> implements MyList<T>, Iterable<T> {
 
         @Override
         public boolean hasNext() {
-            return  count < cursor;
+            return count < cursor;
         }
 
         @Override
         public T next() {
-            T value = array[count];
-            count++;
-            return value;
+            // option 1
+            return array[count++];
+
+            // option 2
+//            T value = array[count];
+//            count++;
+//            return value;
         }
     }
 
@@ -111,7 +116,7 @@ public class MyArrayList<T> implements MyList<T>, Iterable<T> {
     public T remove(int index) {
         if (index < 0 || index > cursor - 1) return null;
         T value = array[index];
-        T[] result = (T[])new Object[array.length - 1];
+        T[] result = (T[]) new Object[array.length - 1];
         for (int i = 0; i < result.length; i++) {
             if (i < index) {
                 result[i] = array[i];
@@ -132,17 +137,19 @@ public class MyArrayList<T> implements MyList<T>, Iterable<T> {
 
     @Override
     public T get(int index) {
-        if (index < 0 || index > cursor -1) return null;
+        if (index < 0 || index > cursor - 1) return null;
         return array[index];
     }
+
     @Override
     public T[] toArray() {
-        T[] result = (T[])new Object[cursor];
+        T[] result = (T[]) new Object[cursor];
         for (int i = 0; i < cursor; i++) {
             result[i] = array[i];
         }
         return result;
     }
+
     public void trim() {
         array = toArray();
     }

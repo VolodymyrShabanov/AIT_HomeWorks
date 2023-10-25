@@ -64,34 +64,53 @@ public class Person {
         //        длина >= 8
         if (password.length() < 8) return false;
 
-//        мин 1 цифра
-        boolean isDigit = false;
-//        мин 1 маленькая буква
-        boolean isLowerCase = false;
-//        мин 1 большая буква
-        boolean isUpperCase = false;
-//        мин 1 спец.символ ("!%$@&")
-        boolean isSpecialSymbol = false;
+        boolean[] res = new boolean[4];
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             if ((Character.isDigit(c))) {
-                isDigit = true;
+                res[0] = true;
             }
             if ((Character.isLowerCase(c))) {
-                isLowerCase = true;
+                res[1] = true;
             }
             if ((Character.isUpperCase(c))) {
-                isUpperCase = true;
+                res[2] = true;
             }
-            if (c == '!' || c == '%' || c == '$' || c == '@' || c == '&') {
-                isSpecialSymbol = true;
+            if ("!%$@&".indexOf(c) >= 0) {
+                res [3] = true;
             }
         }
 
-        if (!(isDigit && isLowerCase && isUpperCase && isSpecialSymbol)) {
-            return false;
-        }
+        return res[0] && res[1] && res[2] && res[3];
 
-        return true;
+        //// это моя реализация!!!
+////        мин 1 цифра
+//        boolean isDigit = false;
+////        мин 1 маленькая буква
+//        boolean isLowerCase = false;
+////        мин 1 большая буква
+//        boolean isUpperCase = false;
+////        мин 1 спец.символ ("!%$@&")
+//        boolean isSpecialSymbol = false;
+//        for (int i = 0; i < password.length(); i++) {
+//            char c = password.charAt(i);
+//            if ((Character.isDigit(c))) {
+//                isDigit = true;
+//            }
+//            if ((Character.isLowerCase(c))) {
+//                isLowerCase = true;
+//            }
+//            if ((Character.isUpperCase(c))) {
+//                isUpperCase = true;
+//            }
+//            if (c == '!' || c == '%' || c == '$' || c == '@' || c == '&') {
+//                isSpecialSymbol = true;
+//            }
+//        }
+//
+//        if (!(isDigit && isLowerCase && isUpperCase && isSpecialSymbol)) {
+//            return false;
+//        }
+//        return true;
     }
 }

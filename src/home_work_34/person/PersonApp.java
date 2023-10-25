@@ -16,6 +16,21 @@ public class PersonApp {
         System.out.println(person);
         person.setEmail("as_d@fff.ff");
         System.out.println(person);
+        System.out.println("===== validPassword ===========================");
+
+        String validPassword = "asdf3%AS";
+        System.out.println("Previous pass: " + person.getPassword());
+        person.setPassword(validPassword);
+        System.out.println("current pass: " + person.getPassword());
+
+
+        System.out.println("===== inValidPassword ===========================");
+        String inValidPassword = "asdf3%A";
+        System.out.println("Previous pass: " + person.getPassword());
+        person.setPassword(inValidPassword);
+        System.out.println("current pass: " + person.getPassword());
+
+
 
     }
 }
