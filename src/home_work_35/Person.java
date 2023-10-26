@@ -82,6 +82,7 @@ public class Person {
 
     private boolean isPasswordValid(String password) {
         if (password.length() < 8) return false;
+        if (password.equals(getPassword())) return false;
 
         boolean[] res = new boolean[4]; // [false, false, false, false]
         for (int i = 0; i < password.length(); i++) {
@@ -108,10 +109,13 @@ public class Person {
         return res[0] && res[1] && res[2] && res[3];
     }
 
-    public void setPassword(String password) {
+    public boolean setPassword(String password) {
+
         if (isPasswordValid(password)) {
             this.password = password;
+            return true;
         }
+        return false;
     }
 
     @Override
@@ -120,4 +124,5 @@ public class Person {
                 "email='" + email + '\'' +
                 '}';
     }
+
 }

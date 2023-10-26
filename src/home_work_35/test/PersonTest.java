@@ -26,12 +26,15 @@ class PersonTest {
         Assertions.assertEquals(validEmail, person.getEmail());
     }
 
+
     @Test
     void testInvalidEmail() {
         String incorrectEmail = "invalid.test.de";
         person.setEmail(incorrectEmail);
         Assertions.assertEquals(startEmail, person.getEmail());
     }
+
+
 
     @Test
     void testInvalidEmailTwoAtSet() {
@@ -96,5 +99,10 @@ class PersonTest {
         person.setPassword(incorrectPassword);
         Assertions.assertEquals(startPassword, person.getPassword());
     }
+
+    // Teacher =======================================================
+
+
+
 
 }
