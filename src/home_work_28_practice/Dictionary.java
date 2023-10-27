@@ -1,4 +1,4 @@
-package home_work_28;
+package home_work_28_practice;
 
 public class Dictionary {
 

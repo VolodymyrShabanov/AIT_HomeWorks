@@ -1,6 +1,4 @@
-package home_work_28;
-
-import java.util.Arrays;
+package home_work_28_practice;
 
 public class MainDictionatry {
     public static void main(String[] args) {

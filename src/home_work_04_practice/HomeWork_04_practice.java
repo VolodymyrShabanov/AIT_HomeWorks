@@ -1,4 +1,4 @@
-package home_work_04;
+package home_work_04_practice;
 
 import java.util.Locale;
 import java.util.Scanner;
