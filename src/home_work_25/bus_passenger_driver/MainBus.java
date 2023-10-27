@@ -15,8 +15,8 @@ public class MainBus {
         Bus bus = new Bus("Neoplan", 44, driver);
         System.out.println(bus.toString());
 
-        // Dane - вывод массива пассажиров.
-        // Dane - вывод отсутствие драйвера.
+        // Done - вывод массива пассажиров.
+        // Done - вывод отсутствие драйвера.
 
         Bus bus1 = new Bus("Scaniz", 5);
         System.out.println(bus1.toString());

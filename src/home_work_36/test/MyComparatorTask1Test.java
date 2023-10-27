@@ -30,4 +30,19 @@ class MyComparatorTask1Test {
         assertArrayEquals(startIntegers, integers);
     }
 
+//    // Реализация при помощи GitHub
+//    @ParameterizedTest
+//    @MethodSource("arraysProvider")
+//    void testComparatorTask1(Integer[] integers) {
+//        Arrays.sort(integers, myComparatorTask1);
+//        assertArrayEquals(startIntegers, integers);
+//    }
+//    static Stream<Object[]> arraysProvider() {
+//        return Stream.of(
+//                new Object[]{new Integer[]{1, 6, 5, 4, 7, 8, 9, 2, 7, 3}},
+//                new Object[]{new Integer[]{1, 5, 6, 7, 4, 9, 8, 7, 2, 3}}
+//
+//        );
+//    }
+
 }
