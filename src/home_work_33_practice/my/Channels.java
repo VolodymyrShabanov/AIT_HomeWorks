@@ -1,4 +1,4 @@
-package home_work_33_practice;
+package home_work_33_practice.my;
 
 import java.util.Arrays;
 

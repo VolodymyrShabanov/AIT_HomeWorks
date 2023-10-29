@@ -1,4 +1,4 @@
-package home_work_33_practice;
+package home_work_33_practice.my;
 
 // Created by Volodymyr Sh on 27.10.2023
 // project name: AIT_HomeWorks

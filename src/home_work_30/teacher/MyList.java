@@ -23,7 +23,7 @@ public interface MyList<T> {
 
     T remove(int index);
 
-    // Отвечает на вопрос является ли коллекция пустой
+    // Отвечает на вопрос, является ли коллекция пустой
     boolean isEmpty();
 
     T get(int index);
