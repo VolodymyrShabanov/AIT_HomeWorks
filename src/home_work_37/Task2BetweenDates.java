@@ -32,6 +32,7 @@ public class Task2BetweenDates {
 
 
     // Option 1
+    // TODO - переделать ссылку на MyArrayList - из урока 35 (или ДЗ 34);
     public static long daysBetweenDates(MyArrayList<LocalDate> dates) {
         if (dates == null || dates.isEmpty()) return Long.MIN_VALUE;
 
