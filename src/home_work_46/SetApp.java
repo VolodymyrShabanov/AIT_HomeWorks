@@ -6,7 +6,7 @@ import java.util.*;
  * Created by Volodymyr Sh on 09.11.2023
  * project name: AIT_HomeWorks
  */
-public class AppSetTask1 {
+public class SetApp {
 
     public static void main(String[] args) {
 
