@@ -1,4 +1,4 @@
-package home_work_45;
+package home_work_45.my;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

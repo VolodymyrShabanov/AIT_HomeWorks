@@ -1,4 +1,4 @@
-package home_work_45;
+package home_work_45.my;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class InterfaceList<T> {
 
-    public List<T> intersectLists(List<T> first, List<T> second) {
+    public static <T> List<T> intersectLists(List<T> first, List<T> second) {
         List<T> result = new ArrayList<>();
         for (int i = 0; i < first.size(); i++) {
             for (int j = 0; j < second.size(); j++) {
