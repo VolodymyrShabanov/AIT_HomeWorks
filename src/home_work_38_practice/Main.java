@@ -1,10 +1,10 @@
-package home_work_38;
+package home_work_38_practice;
 
-import home_work_38.repositories.ProductsRepository;
-import home_work_38.repositories.UsersRepository;
-import home_work_38.services.ProductService;
-import home_work_38.services.UsersService;
-import home_work_38.view.Menu;
+import home_work_38_practice.repositories.ProductsRepository;
+import home_work_38_practice.repositories.UsersRepository;
+import home_work_38_practice.services.ProductService;
+import home_work_38_practice.services.UsersService;
+import home_work_38_practice.view.Menu;
 
 // Created by Volodymyr Sh on 27.10.2023
 // project name: AIT_Lessons

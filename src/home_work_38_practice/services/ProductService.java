@@ -1,9 +1,7 @@
-package home_work_38.services;
+package home_work_38_practice.services;
 
-import home_work_38.models.Product;
-import home_work_38.repositories.ProductsRepository;
-
-import java.util.function.Predicate;
+import home_work_38_practice.models.Product;
+import home_work_38_practice.repositories.ProductsRepository;
 
 /**
  * Created by Volodymyr Sh on 29.10.2023

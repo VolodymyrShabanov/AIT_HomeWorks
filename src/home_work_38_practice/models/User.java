@@ -1,4 +1,4 @@
-package home_work_38.models;
+package home_work_38_practice.models;
 
 // Created by Volodymyr Sh on 27.10.2023
 // project name: AIT_Lessons

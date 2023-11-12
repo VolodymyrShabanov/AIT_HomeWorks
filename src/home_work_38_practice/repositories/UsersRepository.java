@@ -1,6 +1,6 @@
-package home_work_38.repositories;
+package home_work_38_practice.repositories;
 
-import home_work_38.models.User;
+import home_work_38_practice.models.User;
 
 // Created by Volodymyr Sh on 27.10.2023
 // project name: AIT_Lessons

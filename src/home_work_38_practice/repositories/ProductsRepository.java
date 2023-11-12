@@ -1,8 +1,7 @@
-package home_work_38.repositories;
+package home_work_38_practice.repositories;
 
-import home_work_38.models.Product;
+import home_work_38_practice.models.Product;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;

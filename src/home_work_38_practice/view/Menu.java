@@ -1,9 +1,9 @@
-package home_work_38.view;
+package home_work_38_practice.view;
 
-import home_work_38.models.Product;
-import home_work_38.models.User;
-import home_work_38.services.ProductService;
-import home_work_38.services.UsersService;
+import home_work_38_practice.models.Product;
+import home_work_38_practice.models.User;
+import home_work_38_practice.services.ProductService;
+import home_work_38_practice.services.UsersService;
 
 import java.util.Scanner;
 
