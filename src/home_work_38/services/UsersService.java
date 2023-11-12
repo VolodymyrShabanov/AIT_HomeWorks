@@ -21,6 +21,7 @@ public class UsersService {
             return;
         }
         User user = new User(firstName, lastName, email, password);
+        System.out.println("The user is register: " + user.getFirstName() + " || " + user.getLastName());
         usersRepository.save(user);
     }
 

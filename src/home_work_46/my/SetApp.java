@@ -1,4 +1,4 @@
-package home_work_46;
+package home_work_46.my;
 
 import java.util.*;
 
@@ -10,7 +10,7 @@ public class SetApp {
 
     public static void main(String[] args) {
 
-        String testString = "Тестовая; <..''\'\' строка для удаления слов, которые повторяются. \"строка\" для удаления!";
+        String testString = "Тестовая строка для удаления слов, которые повторяются. \"строка\" для удаления!";;
         System.out.println(getUniqueSortedWords(testString));
 
         Set<String> set1 = new HashSet<>(List.of("A", "B", "C", "D"));
@@ -22,7 +22,8 @@ public class SetApp {
     }
 
     public static List<String> getUniqueSortedWords(String string) {
-        Set<String> result = new TreeSet<>((word1, word2) -> Integer.compare(word1.length(), word2.length()));
+//        Set<String> result = new TreeSet<>((word1, word2) -> Integer.compare(word1.length(), word2.length()));
+        Set<String> result = new TreeSet<>(Comparator.comparing(String:: length).thenComparing(Comparator.naturalOrder()));
         int s = 0;
         for (int i = 0; i < string.length(); i++) {
             if (!Character.isAlphabetic(string.charAt(i)) && s != i) {
@@ -59,6 +60,7 @@ public class SetApp {
         for (int i = 0; i < string.length(); i++) {
             result.add(string.charAt(i));
         }
+
         // TODO - Написать метод, возвращающий первый неповторяющийся символ в строке
         return '?';
     }

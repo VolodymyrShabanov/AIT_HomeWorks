@@ -3,14 +3,26 @@ package home_work_38.models;
 // Created by Volodymyr Sh on 27.10.2023
 // project name: AIT_Lessons
 public class Product {
+    private final int id;
     private String title;
     private double price;
     private String description;
 
-    public Product(String title, double price, String description) {
+    public Product(int id, String title, double price, String description) {
+        this.id = id;
         this.title = title;
         this.price = price;
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id = " + id +
+                ", title = '" + title + '\'' +
+                ", price = " + price +
+                ", description = '" + description + '\'' +
+                '}';
     }
 
     public String getTitle() {
@@ -35,5 +47,9 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
     }
 }
