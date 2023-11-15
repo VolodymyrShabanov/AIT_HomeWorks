@@ -46,6 +46,7 @@ public class Task3 {
     }
 
     private static Character getFirstUniqueChar2(String string) {
+        // с одним сетом работает не корректно
         Set<Character> uniqueChars = new LinkedHashSet<>();
 
         for (char ch : string.toCharArray()) {
