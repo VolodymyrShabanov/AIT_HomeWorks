@@ -22,23 +22,24 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
     @Override
     public V put(K key, V value) {
         int index = getIndex(key);
-
         Node<K, V> current = buckets[index];
-
         while (current != null) {
-
-            if (current.key == null && key == null) {
-                current.value = value;
-                return value;
-            }
-
-            if (current.key != null && current.key.equals(key)) {
-                current.value = value;
+//            if (current.key == null && key == null) {
+//                current.value = value;
+//                return value;
+//            }
+//
+//            if (current.key != null && current.key.equals(key)) {
+//                current.value = value;
+//                return value;
+//            }
+            if (Objects.equals(current.key, key)) {
                 return value;
             }
             if (current.next == null) {
                 break;
             }
+
             current = current.next;
         }
 
@@ -60,6 +61,10 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
     }
 
     public int getIndex(K key) {
+        return key != null ? key.hashCode() & (capacity - 1) : 0;
+    }
+
+    public int getIndexObject(Object key) {
         return key != null ? key.hashCode() & (capacity - 1) : 0;
     }
 
@@ -89,16 +94,21 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
 
     @Override
     public V get(Object key) {
-        int index = key != null ? key.hashCode() & (capacity - 1) : 0;
+        int index = getIndexObject(key);
+
         Node<K, V> current = buckets[index];
 
         while (current != null) {
 
-            if (current.key == null && key == null) {
-                return current.value;
-            }
+//            if (current.key == null && key == null) {
+//                return current.value;
+//            }
+//
+//            if (current.key != null && current.key.equals(key)) {
+//                return current.value;
+//            }
 
-            if (current.key != null && current.key.equals(key)) {
+            if (Objects.equals(current.key, key)) {
                 return current.value;
             }
             current = current.next;
@@ -109,13 +119,32 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
 
     @Override
     public V remove(Object key) {
-
-        int index = key != null ? key.hashCode() & (capacity - 1) : 0;
+        int index = getIndexObject(key);
         Node<K, V> previous = null;
         Node<K, V> current = buckets[index];
 
         while (current != null) {
-            if (current.key == null && key == null) {
+//            if (current.key == null && key == null) {
+//                if (previous == null) {
+//                    buckets[index] = current.next;
+//                } else {
+//                    previous.next = current.next;
+//                }
+//                size--;
+//                return current.value;
+//            }
+//
+//            if (current.key != null && current.key.equals(key)) {
+//                if (previous == null) {
+//                    buckets[index] = current.next;
+//                } else {
+//                    previous.next = current.next;
+//                }
+//                size--;
+//                return current.value;
+//            }
+
+            if (Objects.equals(current.key, key)) {
                 if (previous == null) {
                     buckets[index] = current.next;
                 } else {
@@ -125,15 +154,6 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
                 return current.value;
             }
 
-            if (current.key != null && current.key.equals(key)) {
-                if (previous == null) {
-                    buckets[index] = current.next;
-                } else {
-                    previous.next = current.next;
-                }
-                size--;
-                return current.value;
-            }
             previous = current;
             current = current.next;
         }
@@ -153,15 +173,18 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
 
     @Override
     public boolean containsKey(K key) {
-        int index = key != null ? key.hashCode() & (capacity - 1) : 0;
+        int index = getIndex(key);
         Node<K, V> current = buckets[index];
 
         while (current != null) {
-            if (current.key == null && key == null) {
-                return true;
-            }
-            if (current.key != null && current.key.equals(key)) {
+//            if (current.key == null && key == null) {
+//                return true;
+//            }
+//            if (current.key != null && current.key.equals(key)) {
+//                return true;
+//            }
 
+            if (Objects.equals(current.key, key)) {
                 return true;
             }
             current = current.next;
