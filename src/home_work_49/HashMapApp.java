@@ -59,7 +59,7 @@ public class HashMapApp {
 //
 //
 //        System.out.println("============ map.clear ============");
-////        map.clear();
+        map.clear();
 ////        map.put(3, "one");
 ////        System.out.println(map + " size: " + map.size());
 ////        System.out.println(map.keySet());
@@ -78,9 +78,13 @@ public class HashMapApp {
         map.put(53, "fifty three");
         System.out.println(map + " size: " + map.size());
 
-        System.out.println(map + " remove: " + map.remove(null));
+        System.out.println(map +  " remove: " + map.remove(null));
+        System.out.println(" size: " + map.size());
+
         System.out.println(map + " remove: " + map.remove(53));
+        System.out.println(" size: " + map.size());
         System.out.println(map + " remove: " + map.remove(null));
+        System.out.println(" size: " + map.size());
 //        System.out.println(map + " remove: " + map.remove(21));
 
 

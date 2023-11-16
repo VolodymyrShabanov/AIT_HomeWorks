@@ -111,32 +111,33 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
     public V remove(Object key) {
 
         int index = key != null ? key.hashCode() & (capacity - 1) : 0;
-        Node<K, V> first = null;
+        Node<K, V> previous = null;
         Node<K, V> current = buckets[index];
 
         while (current != null) {
             if (current.key == null && key == null) {
-                if (first == null) {
+                if (previous == null) {
                     buckets[index] = current.next;
                 } else {
-                    first.next = current.next;
+                    previous.next = current.next;
                 }
+                size--;
                 return current.value;
             }
 
             if (current.key != null && current.key.equals(key)) {
-                if (first == null) {
+                if (previous == null) {
                     buckets[index] = current.next;
                 } else {
-                    first.next = current.next;
+                    previous.next = current.next;
                 }
+                size--;
                 return current.value;
             }
-
-            first = current;
+            previous = current;
             current = current.next;
         }
-        size--;
+
         return null;
     }
 
@@ -182,11 +183,9 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
         Set<K> result = new HashSet<>();
 
         for (Node<K, V> node : buckets) {
-            Node<K, V> current = node;
-
-            while (current != null) {
-                result.add(current.key);
-                current = current.next;
+            while (node != null) {
+                result.add(node.key);
+                node = node.next;
             }
         }
         return result;
@@ -197,11 +196,9 @@ public class MyHashMap<K, V> implements InterfaceHashMap<K, V> {
         Collection<V> result = new ArrayList<>();
 
         for (Node<K, V> node : buckets) {
-            Node<K, V> current = node;
-
-            while (current != null) {
-                result.add(current.value);
-                current = current.next;
+            while (node != null) {
+                result.add(node.value);
+                node = node.next;
             }
         }
         return result;
