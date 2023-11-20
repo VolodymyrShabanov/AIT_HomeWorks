@@ -1,4 +1,4 @@
-package home_work_50.person.password_validate;
+package home_work_50.password_validate;
 
 /**
  * Created by Volodymyr Sh on 16.11.2023

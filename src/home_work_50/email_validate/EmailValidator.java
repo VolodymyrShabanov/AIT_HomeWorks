@@ -1,4 +1,4 @@
-package home_work_50.person.email_validate;
+package home_work_50.email_validate;
 
 /**
  * Created by Volodymyr Sh on 15.11.2023

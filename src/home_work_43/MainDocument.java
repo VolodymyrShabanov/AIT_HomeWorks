@@ -10,13 +10,17 @@ public class MainDocument {
         System.out.println("Name: " + document.getName() + "; Status: " + document.getState() + ";");
 
         document.publish();
+        System.out.println("Name: " + document.getName() + "; Status: " + document.getState() + ";");
         document.correct();
-
+        System.out.println("Name: " + document.getName() + "; Status: " + document.getState() + ";");
         document.deleted();
+        System.out.println("Name: " + document.getName() + "; Status: " + document.getState() + ";");
         document.deleted();
+        System.out.println("Name: " + document.getName() + "; Status: " + document.getState() + ";");
         document.publish();
+        System.out.println("Name: " + document.getName() + "; Status: " + document.getState() + ";");
         document.correct();
-
+        System.out.println("Name: " + document.getName() + "; Status: " + document.getState() + ";");
 
 
     }

@@ -1,6 +1,4 @@
-package home_work_50.person.password_validate;
-
-import java.util.Objects;
+package home_work_50.password_validate;
 
 /**
  * Created by Volodymyr Sh on 16.11.2023
@@ -19,7 +17,6 @@ public class PasswordValidate {
     5. мин 1 спец. символ ("!%$@&")
      */
         if (password.length() < 8) throw new PasswordValidateException("length error");
-        if (Objects.equals(passwordOld, password)) throw new PasswordValidateException("password already exist");
 
         boolean[] res = new boolean[4];
         for (int i = 0; i < password.length(); i++) {
@@ -42,16 +39,24 @@ public class PasswordValidate {
             }
         }
 
-        return res[0] && res[1] && res[2] && res[3];
-    }
-
-    public static boolean setPassword(String password) throws PasswordValidateException {
-        if (validate(password)) {
-            passwordOld = password;
-            return true;
+        if (!res[0]) {
+            throw new PasswordValidateException("no digit in password");
         }
-        throw new PasswordValidateException("symbol error");
 
+        if (!res[1]) {
+            throw new PasswordValidateException("no lowerCase");
+        }
+
+        if (!res[2]) {
+            throw new PasswordValidateException("no upperCase");
+        }
+
+        if (!res[3]) {
+            throw new PasswordValidateException("absent !%$@&");
+        }
+
+        return true;
     }
-
 }
+
+

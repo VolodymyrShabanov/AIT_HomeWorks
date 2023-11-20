@@ -1,4 +1,4 @@
-package home_work_50.person;
+package home_work_50;
 
 /**
  * Created by Volodymyr Sh on 15.11.2023
@@ -9,7 +9,7 @@ public class PersonsApp {
         Person person1 = new Person("john@email.com", "Qwerty!1");
         System.out.println("person1 password:" + person1.getPassword());
 
-        Person person2 = new Person("john@email.com", "Qwerty!1");
+        Person person2 = new Person("john@email.com", "Qwerty 1");
         System.out.println("person2 password:" + person2.getPassword());
 
         Person person3  = new Person("john@email.com", "Qwer!1");

@@ -1,9 +1,9 @@
-package home_work_50.person;
+package home_work_50;
 
-import home_work_50.person.email_validate.EmailValidateException;
-import home_work_50.person.email_validate.EmailValidator;
-import home_work_50.person.password_validate.PasswordValidate;
-import home_work_50.person.password_validate.PasswordValidateException;
+import home_work_50.email_validate.EmailValidator;
+import home_work_50.email_validate.EmailValidateException;
+import home_work_50.password_validate.PasswordValidate;
+import home_work_50.password_validate.PasswordValidateException;
 
 /**
  * Created by Volodymyr Sh on 15.11.2023
@@ -46,7 +46,7 @@ public class Person {
 
     public void setPassword(String password) {
         try {
-            PasswordValidate.setPassword(password);
+            PasswordValidate.validate(password);
             System.out.println("Password -> is correct!");
             this.password = password;
         } catch (PasswordValidateException e) {
@@ -54,4 +54,5 @@ public class Person {
             e.printStackTrace();
         }
     }
+
 }
