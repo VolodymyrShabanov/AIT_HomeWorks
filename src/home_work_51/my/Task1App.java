@@ -1,4 +1,4 @@
-package home_work_51;
+package home_work_51.my;
 
 import java.io.*;
 import java.util.HashMap;
@@ -10,13 +10,14 @@ import java.util.Map;
  */
 public class Task1App {
     public static void main(String[] args) {
-        File path = new File("src/home_work_51");
+        File path = new File("src/home_work_51/my");
         File file = new File(path, "/database/history_money_receipts.txt");
+        File pathResult = new File("src/home_work_51/my/result");
 
         Map<String, Integer> receipts = getMapFromFile(file);
         System.out.println(receipts);
 
-        splitMapIntoTwoListsByAmount(receipts, 20000, new File("src/home_work_51/result"));
+        splitMapIntoTwoListsByAmount(receipts, 2000, pathResult);
 
     }
 
@@ -35,8 +36,8 @@ public class Task1App {
             throw new RuntimeException(e);
         }
 
-        for (Map.Entry<String, Integer> entry : receipts.entrySet()){
-            if (entry.getValue()<2000){
+        for (Map.Entry<String, Integer> entry : receipts.entrySet()) {
+            if (entry.getValue() < amount) {
                 writerNewFile(entry, less);
             } else {
                 writerNewFile(entry, more);
@@ -47,7 +48,7 @@ public class Task1App {
     private static void writerNewFile(Map.Entry<String, Integer> entry, File file) {
 
         try (FileWriter fileWriter = new FileWriter(file, true);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             String toWrote = entry.getKey() + ":" + entry.getValue();
             fileWriter.write(toWrote);
             bufferedWriter.newLine();
@@ -67,7 +68,7 @@ public class Task1App {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
 
-                String [] strings = line.split(":");
+                String[] strings = line.split(":");
                 String user = strings[0];
                 int money = Integer.parseInt(strings[1]);
 
