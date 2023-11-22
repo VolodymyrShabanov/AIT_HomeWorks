@@ -23,6 +23,8 @@ public class Task2 {
         //System.out.println(getToUpperCase.apply(stringStart));
 
         Function<String, Integer> numberCharacters = string -> string.length();
+        Function<String, Integer> numberCharacters1 = String::length;
+
         //System.out.println(numberCharacters.apply(stringStart));
 
         Function<String, Integer> combinedFunction = deleteSpaces.andThen(getToUpperCase).andThen(numberCharacters);

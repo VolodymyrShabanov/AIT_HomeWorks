@@ -44,9 +44,11 @@ public class Task1 {
         При такой переписке кода, мы уменьшаем количество создаваемых объектов
         и избегаем излишних проверок, что может улучшить производительность.*/
 
-        combinedPredicate = ((Predicate<Integer>) integer -> integer % 2 == 0)
-                .and(integer -> integer > 10)
-                .and(integer -> integer < 100);
+//        combinedPredicate = ((Predicate<Integer>) integer -> integer % 2 == 0)
+//                .and(integer -> integer > 10)
+//                .and(integer -> integer < 100);
+
+        combinedPredicate = (integer -> (integer % 2 == 0) && (integer > 10) && (integer < 100));
 
         System.out.println(filterList(integers, combinedPredicate));
 
