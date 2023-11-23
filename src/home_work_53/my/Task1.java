@@ -1,4 +1,4 @@
-package home_work_53;
+package home_work_53.my;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package home_work_53;
+package home_work_53.my;
 
 /**
  * Created by Volodymyr Sh on 21.11.2023
