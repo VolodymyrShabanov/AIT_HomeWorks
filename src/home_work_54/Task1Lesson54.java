@@ -1,5 +1,6 @@
 package home_work_54;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,11 +15,12 @@ public class Task1Lesson54 {
     * */
 
     public static void main(String[] args) {
-        List<Integer> integers = List.of(123, 44, 2, 6, 32, 48, 77, 151, 9, 0, 89);
+        List<Integer> integers = List.of(123, 44, 2, 6, 32, 48, 77, 151, 9, 11, 0, 89);
 
         List<Integer> result = integers.stream()
                 .filter(i -> i > 10)
-                .sorted((i1, i2) -> Integer.compare(i1 % 10, i2 % 10))
+                .sorted(Comparator.comparingInt(i -> i % 10))
+//                .sorted((i1, i2) -> Integer.compare(i1 % 10, i2 % 10))
 //                .sorted((i1, i2) -> i1 % 10 - i2 % 10)
                 .collect(Collectors.toList());
 
