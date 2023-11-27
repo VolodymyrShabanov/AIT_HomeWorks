@@ -37,8 +37,8 @@ public class Task3 {
         //Option 1
         Double maxAverageSalary = 0.0;
         String departmentWithMaxAverageSalary = "";
-        for(Map.Entry<String, Double> entry : averageSalaryByDepartment.entrySet()){
-            if (entry.getValue() > maxAverageSalary){
+        for (Map.Entry<String, Double> entry : averageSalaryByDepartment.entrySet()) {
+            if (entry.getValue() > maxAverageSalary) {
                 maxAverageSalary = entry.getValue();
                 departmentWithMaxAverageSalary = entry.getKey();
             }
@@ -51,6 +51,12 @@ public class Task3 {
                 .orElse(null);
 
         System.out.println(departmentWithMaxAverageSalary2);
+
+        // Option 3
+        Map.Entry<String, Double> doubleEntry = averageSalaryByDepartment.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .get();
+
     }
 
 }
