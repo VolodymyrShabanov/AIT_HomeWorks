@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * project name: AIT_HomeWorks
  */
 
-public class Task1 {
+public class Task1Lesson_55 {
 /*  Дан список сотрудников (Employee) с полями name, department, salary.
     Используя Stream API, сгруппируйте сотрудников по отделам
 */

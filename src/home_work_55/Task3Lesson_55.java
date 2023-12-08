@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
  * Created by Volodymyr Sh on 26.11.2023
  * project name: AIT_HomeWorks
  */
-public class Task3 {
+public class Task3Lesson_55 {
     /*  Дан список Employee.
         Вычислите среднюю зарплату сотрудников в каждом отделе
         и найдите отдел с максимальной средней зарплатой.

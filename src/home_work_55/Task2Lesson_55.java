@@ -11,7 +11,7 @@ import static home_work_55.Operations.*;
  * Created by Volodymyr Sh on 26.11.2023
  * project name: AIT_HomeWorks
  */
-public class Task2 {
+public class Task2Lesson_55 {
     /*  Дан список транзакций (Transaction) с полями amount, type (DEBIT/CREDIT), timestamp.
         Используя Stream API, вычислите общую сумму для дебетовых и кредитных транзакций отдельно,
         а также найдите транзакцию с максимальной суммой.
@@ -89,6 +89,17 @@ public class Task2 {
                 .collect(Collectors.groupingBy(Transaction::getType,
                         Collectors.maxBy(Comparator.comparingInt(Transaction::getAmount))));
         System.out.println("typeOperationMax: " + typeOperationMax);
+
+        Transaction maxTransaction = transactonList.stream()
+                .max(Comparator.comparingInt(Transaction::getAmount))
+                .orElse(null);
+        System.out.println(maxTransaction);
+
+//         TODO - разобрать пример TEACHER
+//        Optional<Double> optionalSumCredit = transactonList.stream()
+//                .filter(tr -> tr.getType() == CREDIT)
+//                .map(Transaction::getAmount)
+//                .reduce(Double::sum);
 
     }
 }
