@@ -26,7 +26,7 @@ public class HomeWork62 {
         Matcher matcherT1 = pattern.matcher(task1);
 
 
-        sb.append("result Task1: ");
+        sb.append("result Task 1: ");
         while(matcherT1.find()){
             sb.append(matcherT1.group()).append(", ");
         }
@@ -43,13 +43,7 @@ public class HomeWork62 {
         */
 
         Matcher matcherT2 = Pattern.compile("[@&!]").matcher("myemail@example.co!m another&email@example.com");
-        sb.append("result Task2: ");
-        while (matcherT2.find()){
-            sb.append(matcherT2.group()).append(", ");
-        }
-
-        System.out.println(sb);
-        sb.setLength(0);
+        printingResultMatcher("Task 2: ", matcherT2);
 
         /*
         Task 3: Поиск Больших Букв.
@@ -60,14 +54,7 @@ public class HomeWork62 {
         */
 
         Matcher matcherT3 = Pattern.compile("[A-Z]").matcher("London is the capital of Great Britain.");
-        sb.append("result Task3: ");
-        while(matcherT3.find()){
-            sb.append(matcherT3.group()).append(", ");
-        }
-
-        System.out.println(sb);
-        sb.setLength(0);
-
+        printingResultMatcher("Task 3: " , matcherT3);
         /*
         Task 4: Поиск Букв 'b' и 'B'.
         Создайте регулярное выражение для поиска всех вхождений букв 'b' и 'B' в строке.
@@ -77,12 +64,18 @@ public class HomeWork62 {
         */
 
         Matcher matcherT4 = Pattern.compile("[Bb]").matcher("Bears, Bees, and Bunnies are beautiful");
-        sb.append("result Task4: ");
-        while(matcherT4.find()){
-            sb.append(matcherT4.group()).append(", ");
-        }
+        printingResultMatcher("Task 4: ", matcherT4);
 
+        Matcher matcherT5 = Pattern.compile("B|b").matcher("Bears, Bees, and Bunnies are beautiful");
+        printingResultMatcher("Task 5: ", matcherT5);
+    }
+
+    private static void printingResultMatcher(String task, Matcher matcher){
+        StringBuilder sb = new StringBuilder("result ").append(task);
+        while(matcher.find()){
+            sb.append(matcher.group()).append(", ");
+        }
         System.out.println(sb);
-        sb.setLength(0);
+
     }
 }
