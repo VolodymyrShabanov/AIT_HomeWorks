@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * Created by Volodymyr Sh on 14.12.2023
  * project name: AIT_HomeWorks
  */
-public class HomeWork65 {
+public class HomeWork65Teacher {
     public static void main(String[] args) {
         /*  Task 1: Найти все вхождения слова "apple", не следующего за словом "green".
 
@@ -15,7 +15,7 @@ public class HomeWork65 {
             Ожидаемый результат: "apple", "apple"
         */
 
-        Matcher matcherT1 = Pattern.compile("(?<!green )apple")
+        Matcher matcherT1 = Pattern.compile("(?<!green\\s)apple")
                 .matcher("red apple, green apple, just an apple");
         printResultMatcher("Task1", matcherT1);
 
@@ -25,7 +25,7 @@ public class HomeWork65 {
             Ожидаемый результат: "a", "b", "cat"
         */
 
-        Matcher matcherT2 = Pattern.compile("(?<=\\d)\\p{LC}+")
+        Matcher matcherT2 = Pattern.compile("(?<=\\d)\\w+")
                 .matcher("3a, 4b, 5cat, d6, e7, f8, 12робот");
         printResultMatcher("Task2", matcherT2);
 
@@ -35,7 +35,7 @@ public class HomeWork65 {
             Ожидаемый результат: "contact", "admin"
         */
 
-        Matcher matcherT3 = Pattern.compile("\\b\\w[^ ]*(?=@example.com)")
+        Matcher matcherT3 = Pattern.compile("\\b\\w+(?=@example.com)")
                 .matcher("contact@example.com, user@test.com, admin@example.com");
         printResultMatcher("Task3", matcherT3);
 
@@ -46,8 +46,8 @@ public class HomeWork65 {
             Ожидаемый результат: "middle"
         */
 
-        Matcher matcherT4 = Pattern.compile("(?<=start )\\w+(?= end)", Pattern.CASE_INSENSITIVE)
-                .matcher("start middle end, beginning center finish. Start race End.");
+        Matcher matcherT4 = Pattern.compile("(?<=start\\s)(\\w+\\s?)+(?=\\send)", Pattern.CASE_INSENSITIVE) // (?<=start\s)(.+?)(?=\send)
+                .matcher("start middle end, start middle word end, beginning center finish. Start race End.");
         printResultMatcher("Task4", matcherT4);
 
     }
